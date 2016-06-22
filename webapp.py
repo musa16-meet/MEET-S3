@@ -15,7 +15,7 @@ session = DBSession()
 
 @app.route("/")
 def home():
-	return render_template("home.html")
+	return render_template("index.html")
 
 @app.route("/signup", methods = ['GET', 'POST'])
 def signup():
