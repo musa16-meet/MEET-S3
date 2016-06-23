@@ -13,7 +13,7 @@
     <link rel="icon" href="../../favicon.ico">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cover.css') }}">
-    <title>Cover Template for Bootstrap</title>
+    <title>Explore</title>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -36,11 +36,10 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <a class="navbar-brand" href = "#">Cover</a>
-              <nav>
+              <nav id = "navbar-center">
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
+                  <li class="active"><a href="#"></a></li>
+                  <li><a href="{{ url_for('aboutus')}}">About Us</a></li>
                   <li><a href="#">Contact</a></li>
                 </ul>
               </nav>
@@ -48,7 +47,7 @@
           </div>
 
           <div class="inner cover">
-            <h1>Explore</h1>
+            <h1 id = "header">Explore</h1>
             <h4 class ="cover-heading">Connecting people worldwide</h4><br>
             <p class="lead">Hello and welcome to EXPLORE where the world of explorement, and we can write anything we want here like a welcome or a little bit about the thing we are doing.</p>
             <p class="lead">
@@ -61,7 +60,7 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+              <p>All rights reserved®, by <a href="https://twitter.com/_MusaHawa">@Explore</a>.</p>
             </div>
           </div>
 

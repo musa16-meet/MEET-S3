@@ -29,23 +29,13 @@ body {
   height: 100%;
   background-image: url('bokeh.jpg');
   background-repeat: no-repeat;
-  background-size:100% 100%;
+  background-size:100% auto;
 }
 body {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
-
-/* this is for aboutus.html*/
-
-#section1 {padding-top:70px;height:500px;color: #ffffff; background-color: #1abc9c;}
-#section2 {padding-top:70px;height:500px;color: #ffffff; background-color: #474e5d;}
-#section3 {padding-top:70px;height:500px;color: #555555; background-color: #ffffff;}
-#section4 {padding-top:70px;height:500px;color: #fff; background-color: #2f2f2f;}
-
-
-/* the end of aboutus.html css*/
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {

@@ -1,0 +1,14 @@
+body {
+	position: relative; 
+	background-repeat: no-repeat;
+    background-size:100% 100%
+}
+  
+ p {font-size: 22px;}
+ .margin {margin-bottom: 45px;}
+
+
+#section1 {padding-top:70px;height:1075px;color: #ffffff; background-color: #1abc9c;}
+#section2 {padding-top:70px;height:1000px;color: #ffffff; background-color: #474e5d;}
+#section3 {padding-top:70px;height:1000px;color: #ffffff; background-color: #54a8ab;}
+#section4 {padding-top:70px;height:150px;color: #fff; background-color: #2f2f2f;}
