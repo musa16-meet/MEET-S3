@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
   <title>Explore</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='contactus.css') }}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-<body>
-	<form method = 'POST' action = "{{url_for('contactus')}}">
+  </head>
+  <body>
+      <div class="container">
+        <div class="inner">
+          <div class="inner cover">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+              <div class="navbar-header">
+                <a id = "backhome" class="navbar-brand" href="{{url_for('home')}}"><span class = "glyphicon glyphicon-circle-arrow-left"> Home</span></a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a id = "aboutbtn" href="{{url_for('aboutus')}}"><span class = "glyphicon glyphicon-circle-arrow-right"> About Us</span></a></li>
+                </ul>
+              </div>
+              </div>
+            </nav>
 
-		<div class="form-group">
-      		<label for="usr">Name:</label>
-      		<input name ="name"  type="text" id="usr" placeholder="Full Name" >
-    	</div>
-    	<div class="form-group">
-      		<label for="inputEmail" class="sr-only" >Email address</label>
-        	<input type="email" id="inputEmail" placeholder="Email address" name = "email">
-    	</div>
-    	<div class="form-group">
-      		<label for="message">Message:</label>
-      		<textarea rows="6" col = "35" id="message" name = "message" placeholder="Meassage"></textarea>
-    	</div>
+                            <h1 class = "header">Contact Us<br>
+                --------------------------------------------------------</h1>
 
-		<!-- Trigger the modal with a button -->
+              <div class = "row">
+                <h2 class = "header">Explore Would <span class = "glyphicon glyphicon-heart-empty"></span> to help</h3><br>
+                <h4 class = "header">We'd like to hear any suggestions, question, recomendation or problem that you have, <br><br>feel free to say hello :)<br><h4><br>
+              </div>
+            <div class = "row">
+              <div class="col-sm-2">
+              </div>
+              <div class = "col-sm-4">
+                <form method = 'POST' action = "{{url_for('contactus')}}">
+
+                  <div class="form-group">
+                    <input class="form-control" name ="name"  type="text" id="usr" placeholder="Full Name *" required>
+                  </div>
+
+                  <div class="form-group">
+                    <input class="form-control" type="email" id="inputEmail" placeholder="Email address *" name = "email" required>
+                  </div>
+
+                  <div class="form-group">
+                    <textarea class="form-control" rows="7" cols="35" id="message" name = "message" placeholder="Meassage *" required></textarea>
+                  </div>
+
+                  <button type="submit" id = "bt" class="btn btn-defult btn-block btn-lg " data-toggle="modal">Send</button>
+
+                </form>
+            </div>
+              <div class = "col-sm-4">
+                <div class = "row" ><h3> <span class = "glyphicon glyphicon-screenshot" ></span> Jerusalem, King David St.</h3></div>
+                <div class = "row" ><h3> <span class = "glyphicon glyphicon-earphone" ></span>  +972(02)-1234567</h3></div>
+                <div class = "row" ><h3> <span class = "glyphicon glyphicon-envelope" ></span>  Explore@info.com</h3></div>
+                  <p>_________________________________</p>
+                  <a href="https://www.facebook.com/Explore"> <img title="Facebook" src="../static/facebook.png" alt="Facebook" width="35" height="35" align="middle" hspace="15" /> </a> 
+                  <a href="https://www.twitter.com/Explore"> <img title="Twitter" src="../static/twitter.png" alt="twitter" width="35" height="35" align="middle" hspace="15" /> </a> 
+                  <a href="https://plus.google.com/"> <img title="Google+" src="../static/google+.png" alt="GooglePlus" width="35" height="35" align="middle" hspace="15" /> </a> 
+                  <a href="https://www.instagram.com/Explore/"> <img title="Google+" src="../static/insta.png" alt="Instagram" width="35" height="35" align="middle" hspace="15" /> </a>
+              </div>
+              <div class = "col-sm-2">
+              </div>
+            </div>
 
 
-  <!-- Modal -->
-  		<div class="modal fade" id="myModal" role="dialog">
-    		<div class="modal-dialog">
-    
-      <!-- Modal content-->
-      	<div class="modal-content">
-        	<div class="modal-header">
-          		<button type="button" class="close" data-dismiss="modal">&times;</button>
-          		<h4 class="modal-title">Modal Header</h4>
-        	</div>
-        	<div class="modal-body">
-          		<p>Some text in the modal.</p>
-        	</div>
-        	<div class="modal-footer">
-          		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        	</div>
-      	</div>
-      
-    		</div>
-  		</div>
-  
 
-  		<button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Send</button>
-	</form>
-</body>
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
 </html>

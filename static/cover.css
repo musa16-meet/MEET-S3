@@ -13,7 +13,7 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
+  color: #474e5d;
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #fff;
   border: 1px solid #fff;
@@ -30,6 +30,7 @@ body {
   background-image: url('bokeh.jpg');
   background-repeat: no-repeat;
   background-size:100% 100%;
+  border: 1px solid #fff;
 }
 body {
   color: #fff;

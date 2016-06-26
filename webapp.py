@@ -70,6 +70,7 @@ def contactus():
 
 	if request.method == 'GET':
 		return render_template('contactus.html')
+
 	else:
 		user_name = request.form['name']
     	user_email = request.form['email']
@@ -77,7 +78,8 @@ def contactus():
     	msg = Contact(name = user_name, email = user_email, messege= user_message)
     	session.add(msg)
     	session.commit()
-    	return redirect(url_for('home'))
+    	return render_template('sent.html')
+
 
 
 
