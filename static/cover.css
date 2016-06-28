@@ -15,7 +15,7 @@ a:hover {
 .btn-default:focus {
   color: #474e5d;
   text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
+  background-color: #333;
   border: 1px solid #fff;
 }
 
@@ -30,7 +30,6 @@ body {
   background-image: url('bokeh.jpg');
   background-repeat: no-repeat;
   background-size:100% 100%;
-  border: 1px solid #fff;
 }
 body {
   color: #fff;
@@ -38,15 +37,6 @@ body {
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
-/* this is for aboutus.html*/
-
-#section1 {padding-top:70px;height:500px;color: #ffffff; background-color: #1abc9c;}
-#section2 {padding-top:70px;height:500px;color: #ffffff; background-color: #474e5d;}
-#section3 {padding-top:70px;height:500px;color: #555555; background-color: #ffffff;}
-#section4 {padding-top:70px;height:500px;color: #fff; background-color: #2f2f2f;}
-
-
-/* the end of aboutus.html css*/
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -75,9 +65,37 @@ body {
   text-align: center;
 }
 
+
+#navbar{
+  color: #fff;
+  font-size: 22px;
+}
+
+
+
 /*
  * Header
  */
+
+#header{
+  font-size: 62px;
+}
+
+.hbio{
+  font-size: 36px;
+  border-bottom: 2px solid transparent;
+  font-weight: bold;
+  background-color: transparent;
+
+
+}
+
+.abouthe{
+  border-bottom: 2px solid transparent;
+  font-weight: bold;
+  background-color: transparent;
+  color: #333;
+}
 
 .masthead-brand {
   margin-top: 10px;
@@ -93,10 +111,10 @@ body {
 .masthead-nav > li > a {
   padding-right: 0;
   padding-left: 0;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
+  color: #fff;
   border-bottom: 2px solid transparent;
 }
 .masthead-nav > li > a:hover,

@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask import session as web_session
 app = Flask(__name__)
 
-
+app.secret_key = 'MEETS3'
 #SQLAlchemy stuff
 from database import Base, User, Contact #tables
 from sqlalchemy import create_engine
@@ -27,11 +27,12 @@ def signup():
 		new_email = request.form['email']
 		new_username = request.form['username']
 		new_password = request.form['password']
-		person = User(first_name = new_firstname, last_name = new_lastname, email = new_email, username = new_username, password = new_password)
-		session.add(person)
-		session.commit()
-
-		return redirect(url_for('view_profile', user_id = person.id))
+		confirm_password = request.form['confirm_password']
+		if confirm_password == new_password:
+			person = User(first_name = new_firstname, last_name = new_lastname, email = new_email, username = new_username, password = new_password)
+			session.add(person)
+			session.commit()
+			return redirect(url_for('view_profile', user_id = person.id))
 
 
 @app.route("/login", methods = ['GET', 'POST'])
@@ -40,13 +41,13 @@ def login():
 	if request.method == 'GET':
 		return render_template('login.html')
 	else:
-		web_session['username'] = request.form['username']
-		person = session.query(User).filter_by(username = request.form['username']).first()
+		web_session['email'] = request.form['email']
+		person = session.query(User).filter_by(email = request.form['email']).first()
 		if person == None:
 			error = 'User does not exist '
 			return render_template('login.html', error = error)
 		else:
-			return redirect(url_for('view_profile', user_id = person_id))
+			return redirect(url_for('view_profile', user_id = person.id))
 
 
 @app.route("/profile/<int:user_id>")
@@ -92,4 +93,4 @@ def aboutus():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host = "0.0.0.0", debug=True)

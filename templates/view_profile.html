@@ -12,7 +12,6 @@
     <script src="../bootstrap-3.3.6/docs/assets/js/ie-emulation-modes-warning.js"></script>
     <link rel="icon" href="../../favicon.ico">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cover.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='#') }}" type="image/gif">
     <title>Explore</title>
 
@@ -26,49 +25,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
   <body>
-
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <nav >
-                <ul id = "navbar" class="nav masthead-nav ">
-                  <li><a  href="{{ url_for('aboutus')}}">AboutUs</a></li>
-                  <li><a href="{{ url_for('contactus')}}">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 id = "header">Explore</h1>
-            <h4 class ="cover-heading">Connecting people worldwide</h4><br>
-            <p class="lead hbio">Hello and welcome to EXPLORE where the world of explorement, and we can write anything we want here like a welcome or a little bit <span class = "abouthe">about the</span> thing we are doing.</p>
-            <p class="lead">
-              <a class = "btn btn-lg btn-success" href="{{url_for('login')}}"><span class = "glyphicon glyphicon-log-in" ></span> Log in </a>
-            </p>
-            <p class = "lead">
-              <a class ="btn btn-lg btn-primary" href="{{url_for('signup')}}"><span class = "glyphicon glyphicon-user" ></span> Sign Up</a>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>All rights reserved®, by <a href="https://twitter.com/_MusaHawa">@Explore</a>.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
+    <p>you have reached to your profile</p>
+    <div><h5> Profile Page- {{person.username}}</h5></div><br>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
