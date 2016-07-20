@@ -90,6 +90,11 @@ def contactus():
 def aboutus():
 	return render_template('aboutus.html')
 
+@app.route("/newsfeed")
+def newsfeed(user_name):
+	person = session.query(User).filter_by()
+
+	return render_template('newsfeed.html/<username>')
 
 
 if __name__ == '__main__':
