@@ -104,6 +104,8 @@ def edit_profile(user_id):
         new_password = request.form['password']
         new_conpass = request.form['conpass']
         new_email = request.form['email']
+        new_firstname = request.form['first_name']
+        new_lastname = request.form['last_name']
 
 
         person.username = new_username
@@ -120,11 +122,12 @@ def aboutus():
 	return render_template('aboutus.html')
 
 @app.route("/newsfeed")
-def newsfeed(user_name):
-	person = session.query(User).filter_by()
+def newsfeed():
+	return render_template('newsfeed.html')
 
-	return render_template('newsfeed.html/<username>')
-
+@app.route("/chatroom")
+def chatroom():
+	return render_template('chatroom.html')
 
 if __name__ == '__main__':
     app.run(host = "0.0.0.0", debug=True)

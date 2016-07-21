@@ -1,0 +1,14 @@
+html,
+body {
+  height: 100%;
+  background-image: url('bokeh.jpg');
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size:cover;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-size: 125%;
+}
+body {
+  color: #fff;
+}

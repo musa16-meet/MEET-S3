@@ -14,10 +14,22 @@
     <link rel="icon" href="http://conciergeandstyle.com/fetes/e=-716.png">
     <title>Explore</title>
   </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="70">
 
-
-<div><h5> Profile Page- {{person.username}}</h5></div><br>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{ url_for('home')}}"><span class = "glyphicon glyphicon-circle-arrow-left"></span> Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{url_for('newsfeed')}}">Explore</a></li>
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('chatroom')}}">Chat Room</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
     <!-- Bootstrap core JavaScript

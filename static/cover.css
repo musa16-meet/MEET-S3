@@ -27,7 +27,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-image: url('bokeh.jpg');
+  background-image: url('background2.jpg');
   max-width: 100%;
   background-repeat: no-repeat;
   background-size:cover;
@@ -35,7 +35,7 @@ body {
   overflow-y: scroll;
 }
 body {
-  color: #fff;
+  color: #003366;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
@@ -81,7 +81,7 @@ body {
  */
 
 #header{
-  font-size: 62px;
+  font-size: 92px;
 }
 
 .hbio{
