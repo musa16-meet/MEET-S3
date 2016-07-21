@@ -11,21 +11,26 @@
 <br><br>
 <div align="center">
 <table border="2" width="240" >
-	<form action="demo_form.asp">
+	<form method = 'POST'>
+		Username:<input value = "{{person.username}}" type="text" name="username"><br><br>
+		Password:<input value = "{{person.password}}" type="password" name="password"><br><br>
+		Email:<input value = "{{person.email}}" type="email" name="email"><br><br>
+		Re-Write password:<input value="{{person.username}}" type="password" name="conpass">
+		<input type="submit" value="Submit">
+	</form>
+
 	<tr>
-		<th> <input type="file" name="pic1" accept="image/*"> </th> 
-		<th> <input type="file" name="pic2" accept="image/*"> </th> 	
+		<th> <img src="http://www.telegraph.co.uk/content/dam/Travel/Destinations/Asia/India/india_overview_TajMahal-large.jpg" height="250px" > </th> 
+		<th> <img src="http://cdn1.buuteeq.com/upload/18138/india-tours-jaipur-gangaur-festival.jpg.1340x0_default.jpg" height="250px" > </th> 	
 	</tr>
 	<tr>
-		<th> <input type="file" name="pic3" accept="image/*"> </th> 
-		<th> <input type="file" name="pic4" accept="image/*"> </th> 	
+		<th> <img src="http://www.xprize.org/sites/default/files/styles/panopoly_image_full/public/pages/vis-xprize-india.jpg?itok=h6bS3dW6" height="250px" > </th> 
+		<th> <img src="http://www.promotraveldeals.com/wp-content/uploads/2016/05/indian-people.jpg" height="250px" > </th> 	
 	</tr>
-	</form> 
+ 
 
 </table>
 <br>
-
-<input type="submit">
 </div>
 
 
