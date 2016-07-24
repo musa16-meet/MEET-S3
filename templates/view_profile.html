@@ -25,8 +25,45 @@
     <![endif]-->
   </head>
   <body>
-    <p>you have reached to your profile</p>
-    <div><h5> Profile Page- {{person.username}}</h5></div><br>
+
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+        <p>you have reached to your profile</p>
+        <div><h1> Profile Page- {{person.username}}</h1></div><br>
+          <div class="masthead clearfix">
+            <div class="inner">
+              <div class="navbar-header">
+                <a id = "backhome" class="navbar-brand" href="{{url_for('home')}}"><span class = "glyphicon glyphicon-circle-arrow-left"></span> Home</a></a>
+              </div>
+              <nav id = "navbar" >
+                <ul id = "navbar" class="nav masthead-nav ">
+                  <li><a  href="{{ url_for('aboutus')}}">AboutUs</a></li>
+                  <li><a href="{{ url_for('contactus')}}">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>All rights reserved®, by <a href="https://twitter.com/_MusaHawa">@Explore</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

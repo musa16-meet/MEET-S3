@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask import session as web_session
 app = Flask(__name__)
 
@@ -29,18 +29,14 @@ def signup():
 		new_username = request.form['username']
 		new_password = request.form['password']
 		confirm_password = request.form['confirm_password']
-		print ("beginig of the test")
-		print (confirm_password)
-		print (new_password)
-		print ("the end of the test")
 		if confirm_password == new_password:
 			person = User(first_name = new_firstname, last_name = new_lastname, email = new_email, username = new_username, password = new_password)
 			session.add(person)
 			session.commit()
 			return redirect(url_for('view_profile', user_id = person.id))
 		else:
-			error = 'The passwords do not match'
-			return error
+			flash('Password Do not Match, Please try to Match Them')
+			return render_template('signup.html')
 
 
 @app.route("/login", methods = ['GET', 'POST'])

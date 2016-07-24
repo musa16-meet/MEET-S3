@@ -45,13 +45,25 @@
                   <li><a  href="{{ url_for('aboutus')}}">AboutUs</a></li>
                   <li><a href="{{ url_for('contactus')}}">Contact</a></li>
                 </ul>
-              </nav>
+              </nav><br><br><br>
             </div>
           </div>
 
-          <div class="inner cover">
-            <h1 class="form-signin-heading" >Please Sign up</h1><br><br>
+
+          <div class="inner cover"><br><br><br>
+            <h1 class="form-signin-heading" >Here You Can Edit Your Profile:</h1><br><br>
             <form method = 'POST' action = "{{url_for('signup')}}" class="form-signin">
+
+			<table style="width:100%" align = "center">
+  				<tr>
+    				<td>{{person.first_name}}</td>
+    				<td>picture</td>
+    			</tr>
+    			<tr>
+    				<td>picture</td>
+    				<td>Picture</td>
+  				</tr>
+  			</table>
 
               <label for="inputFirstName" class="sr-only">First Name: </label>
               <input value="{{person.first_name}}" type="text" id="inputFirstName" class="form-control" placeholder="First Name" name = "first_name" required autofocus><br>
@@ -66,12 +78,12 @@
               <input value="{{person.email}}" type="email" id="inputEmail" class="form-control" placeholder="Email address" name = "email" required ><br>
 
               <label for="inputPassword" class="sr-only">Password: </label>
-              <input value="{{person.pass}}" type="password" id="inputPassword" class="form-control" placeholder="Password" name = "password" required><br>
+              <input value="{{person.pass}}" type="password" id="inputPassword" class="form-control" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" name = "password" required><br>
 
               <label for="inputPassword" class="sr-only">Confirm Password: </label>
               <input value="{{person.conpass}}" type="password" id="inputPassword" class="form-control" placeholder="Re-Write your Password" name = "confirm_password" required><br>
 
-              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Update Your Profile</button>
             </form>
           </div>
 

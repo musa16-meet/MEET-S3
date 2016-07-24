@@ -19,6 +19,14 @@ class User (Base):
 	id = Column(Integer, primary_key=True)
 	first_name = Column(String(60))
 	last_name = Column(String(60))
-	username = Column(String(60))
+	username = Column(String(60), unique=True)
 	password = Column(String(60))
 	email = Column(String(140))
+
+class Picture(Base):
+	__tablename__='picture'
+	id = Column(Integer, primary_key=True)
+	pic1 = Column(String(150))
+	pic2 = Column(String(150))
+	pic3 = Column(String(150))
+	pic4 = Column(String(150))
