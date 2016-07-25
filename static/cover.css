@@ -27,13 +27,20 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-image: url('background2.jpg');
+  background-image: url('background1.jpg');
   max-width: 100%;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size:cover;
-  overflow-x: hidden;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  -o-background-size:cover;
+  /*overflow-x: hidden;*/
   overflow-y: scroll;
 }
+
+
+
 body {
   color: #003366;
   text-align: center;
@@ -71,7 +78,7 @@ body {
 
 #navbar{
   color: #fff;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 

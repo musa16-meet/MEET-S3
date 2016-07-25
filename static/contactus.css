@@ -30,6 +30,11 @@ body {
 
 }
 
+#navbar{
+  color: #fff;
+  font-size: 22px;
+}
+
 #backhome{
   color: #fff;
   font-size: 22px;
@@ -78,9 +83,7 @@ body {
 }
 
 .navbar {
-   background-color: transparent;
-   background: transparent;
-   border-color: transparent;
+
    color: #fff;
   }
 

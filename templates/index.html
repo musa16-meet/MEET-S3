@@ -28,25 +28,49 @@
 
   <body>
 
+
+
+
+
+
+
+ <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{url_for('home')}}"><img src="../static/logo.png" class ="img-responsive" alt="Explore logo" height="24"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="{{url_for('contactus')}}">Contact</a></li>
+            <li><a href="{{url_for('aboutus')}}">AboutUs</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+
+
+
+
+
+
+
     <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
 
-          <div class="masthead clearfix">
-            <div class="inner">
-              <nav>
-                <ul id = "navbar" class="nav masthead-nav ">
-                  <li><a  href="{{ url_for('aboutus')}}">AboutUs</a></li>
-                  <li><a href="{{ url_for('contactus')}}">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
           <div class="inner cover"><br><br><br><br>
-            <img src="../static/logo.png" alt="Explore logo"><br><br>
+            <img src="../static/logo.png" class="img-responsive" alt="Explore logo"><br><br>
             <p class="lead hbio">Hello and Welcome to <b>Explore</b>, where you can learn about new cultures and meet new people with different backgrounds from all around the world.</p>
             <p class="lead">
               <a class = "btn btn-lg btn-success" href="{{url_for('login')}}"><span class = "glyphicon glyphicon-log-in" ></span> Log in </a>

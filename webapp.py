@@ -50,6 +50,7 @@ def login():
 		if person == None:
 			error = 'User does not exist '
 			return render_template('login.html', error = error)
+			flash('You were successfully logged in')
 		else:
 			if person.password == request.form['password']:
 				return redirect(url_for('view_profile', user_id = person.id))
