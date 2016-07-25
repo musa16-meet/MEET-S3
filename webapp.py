@@ -50,10 +50,9 @@ def login():
 		if person == None:
 			error = 'User does not exist '
 			return render_template('login.html', error = error)
-			flash('You were successfully logged in')
 		else:
 			if person.password == request.form['password']:
-				return redirect(url_for('view_profile', user_id = person.id))
+				return render_template('newsfeed.html', person = person, user_id = person.id )
 			return render_template('login.html', error = error)
 
 
@@ -118,9 +117,10 @@ def edit_profile(user_id):
 def aboutus():
 	return render_template('aboutus.html')
 
-@app.route("/newsfeed")
-def newsfeed():
-	return render_template('newsfeed.html')
+@app.route("/newsfeed/<int:user_id>")
+def newsfeed(user_id):
+	person = session.query(User).filter_by(id = user_id).first()
+	return render_template('newsfeed.html', person = person)
 
 @app.route("/chatroom")
 def chatroom():

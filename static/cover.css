@@ -39,7 +39,10 @@ body {
   overflow-y: scroll;
 }
 
+#logo_img{
+  margin: 0 auto ;
 
+}
 
 body {
   color: #003366;
