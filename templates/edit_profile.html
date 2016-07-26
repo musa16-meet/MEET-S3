@@ -37,15 +37,26 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <div class="navbar-header">
-                <a id = "backhome" class="navbar-brand" href="{{url_for('home')}}"><span class = "glyphicon glyphicon-circle-arrow-left"></span> Home</a></a>
-              </div>
-              <nav id = "navbar" >
-                <ul id = "navbar" class="nav masthead-nav ">
-                  <li><a  href="{{ url_for('aboutus')}}">AboutUs</a></li>
-                  <li><a href="{{ url_for('contactus')}}">Contact</a></li>
-                </ul>
-              </nav><br><br><br>
+ <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{url_for('home')}}"><img src="../static/logo.png" alt="Explore logo" height="24"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('contactus')}}">Contact</a></li>
+            <li><a href="{{url_for('aboutus')}}">AboutUs</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
             </div>
           </div>
 
@@ -54,16 +65,18 @@
             <h1 class="form-signin-heading" >Here You Can Edit Your Profile:</h1><br><br>
             <form method = 'POST' action = "{{url_for('signup')}}" class="form-signin">
 
-			<table style="width:100%" align = "center">
+          <img src="../static/p1.jpg" class="img-responsive logo_img" alt="first profile" height="300"> <br><br>
+
+			<!-- <table style="width:100%" align = "center">
   				<tr>
-    				<td>{{person.first_name}}</td>
+    				<td>picture</td>
     				<td>picture</td>
     			</tr>
     			<tr>
     				<td>picture</td>
     				<td>Picture</td>
   				</tr>
-  			</table>
+  			</table> -->
 
               <label for="inputFirstName" class="sr-only">First Name: </label>
               <input value="{{person.first_name}}" type="text" id="inputFirstName" class="form-control" placeholder="First Name" name = "first_name" required autofocus><br>
@@ -115,7 +128,7 @@
 
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -155,4 +168,4 @@
 
 </body>
 
-</html>
+</html> -->
