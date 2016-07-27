@@ -39,7 +39,7 @@ body {
   overflow-y: scroll;
 }
 
-#logo_img{
+.logo_img{
   margin: 0 auto ;
 
 }
