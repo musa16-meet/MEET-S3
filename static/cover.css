@@ -44,8 +44,15 @@ body {
 
 }
 
+@font-face {
+  font-family: bio;
+  src: url(Aaargh.ttf);
+}
+
+
 body {
-  color: #003366;
+  color: #ffffff;
+  font-family: bio;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
@@ -84,6 +91,21 @@ body {
   font-size: 18px;
 }
 
+.navbar-default .navbar-nav > li > a{
+
+  color: #fff;
+}
+
+
+
+.navbar-default {
+    background-color: #333;
+    border-color: #333;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #333;
+}
 
 
 /*
@@ -134,12 +156,12 @@ body {
 .masthead-nav > li > a:focus {
   background-color: transparent;
   border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
+  border-bottom-color: rgba(255,255, 255,.25);
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
-  color: #fff;
+  color: #000;
   border-bottom-color: #fff;
 }
 
