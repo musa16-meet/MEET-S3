@@ -15,6 +15,8 @@ session = DBSession()
 
 @app.route("/")
 def home():
+	# if(request.user.is_authenticated()):
+	# 	return redirect(url_for('newsfeed', user_id = request.user.id))
 	return render_template("index.html")
 
 @app.route("/signup", methods = ['GET', 'POST'])
@@ -33,9 +35,8 @@ def signup():
 			person = User(first_name = new_firstname, last_name = new_lastname, email = new_email, username = new_username, password = new_password)
 			session.add(person)
 			session.commit()
-			return redirect(url_for('view_profile', user_id = person.id))
+			return redirect(url_for('edit_profile', user_id = person.id))
 		else:
-			flash('Password Do not Match, Please try to Match Them')
 			return render_template('signup.html')
 
 
@@ -47,13 +48,16 @@ def login():
 	else:
 		web_session['email'] = request.form['email']
 		person = session.query(User).filter_by(email = request.form['email']).first()
+		web_session['id'] = person.id
 		if person == None:
 			error = 'User does not exist '
 			return render_template('login.html', error = error)
 		else:
 			if person.password == request.form['password']:
-				return render_template('newsfeed.html', person = person, user_id = person.id )
+				return redirect(url_for('newsfeed' , user_id = person.id))
 			return render_template('login.html', error = error)
+
+
 
 
 @app.route("/profile/<int:user_id>")
@@ -117,10 +121,24 @@ def edit_profile(user_id):
 def aboutus():
 	return render_template('aboutus.html')
 
-@app.route("/newsfeed/<int:user_id>")
-def newsfeed(user_id):
-	person = session.query(User).filter_by(id = user_id).first()
-	return render_template('newsfeed.html', person = person)
+@app.route("/newsfeed")
+def newsfeed():
+	# num = len(session.query(User).all())
+	# if user_id == 0:
+	# 	user_id = num
+	# 	return redirect(url_for('newsfeed',user_id = user_id))
+	# person = session.query(User).filter_by(id = user_id).first()
+	# return render_template('newsfeed.html', person = person, num = num)
+	return render_template('newsfeed.html')
+
+@app.route('/newsfeed2')
+def newsfeed2():
+	return render_template('newsfeed2.html')
+
+@app.route('/newsfeed3')
+def newsfeed3():
+	return render_template('newsfeed3.html')
+
 
 @app.route("/chatroom")
 def chatroom():

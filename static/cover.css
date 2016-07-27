@@ -44,6 +44,19 @@ body {
 
 }
 
+#arrowleft{
+
+  font-size: 30px;
+  color: #000016;
+}
+
+#arrowright{
+  font-size: 30px;
+  color: #000016;
+
+
+}
+
 body {
   color: #003366;
   text-align: center;
