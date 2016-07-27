@@ -54,7 +54,7 @@ def login():
 			return render_template('login.html', error = error)
 		else:
 			if person.password == request.form['password']:
-				return redirect(url_for('newsfeed' , user_id = person.id))
+				return redirect(url_for('newsfeed', user_id = person.id)) #, user_id = person.id)
 			return render_template('login.html', error = error)
 
 
@@ -121,23 +121,43 @@ def edit_profile(user_id):
 def aboutus():
 	return render_template('aboutus.html')
 
-@app.route("/newsfeed")
-def newsfeed():
-	# num = len(session.query(User).all())
-	# if user_id == 0:
-	# 	user_id = num
-	# 	return redirect(url_for('newsfeed',user_id = user_id))
-	# person = session.query(User).filter_by(id = user_id).first()
-	# return render_template('newsfeed.html', person = person, num = num)
-	return render_template('newsfeed.html')
+	
 
-@app.route('/newsfeed2')
-def newsfeed2():
-	return render_template('newsfeed2.html')
+@app.route("/newsfeed/<int:user_id>")
+def newsfeed(user_id):
+	num = len(session.query(User).all())
+	x = "#"*100
+	var = request.args.get('next')
+	print(x)
+	print(var)
+	# print
+	new_id = user_id
+	if(var != None):
+		if(web_session['id']== user_id + int(var)):
+			user_id += int(var)
+		if(var == '-1'):
+			print("I'm going baaaaccck")
+			new_id = num if user_id == 1 else user_id-1
+		if(var == "1"):
+			print("Take me to the future!")
+			new_id = 1 if user_id == num else user_id+1
+		if(new_id == web_session['id']):
+			new_id += int(var)
+		return redirect(url_for('newsfeed', user_id=new_id))
 
-@app.route('/newsfeed3')
-def newsfeed3():
-	return render_template('newsfeed3.html')
+
+	#if(next !=0 and next != None):
+#	 	if(next == 1):
+#	 		new_id = 1 if user_id == num else user_id+1
+#	 	else:
+#	 		new_id = num if user_id == 1 else user_id-1
+#	 	print(url_for('newsfeed',user_id = new_id, next = 0))
+#	 	return redirect(url_for('newsfeed',user_id = new_id))
+
+	person = session.query(User).filter_by(id = new_id).first()
+	return render_template("newsfeed.html",person = person)
+
+
 
 
 @app.route("/chatroom")
@@ -153,3 +173,4 @@ def page_not_found(e):
 
 if __name__ == '__main__':
     app.run(host = "0.0.0.0", debug=True)
+ 
