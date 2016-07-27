@@ -15,6 +15,8 @@ session = DBSession()
 
 @app.route("/")
 def home():
+	# if(request.user.is_authenticated()):
+	# 	return redirect(url_for('newsfeed', user_id = request.user.id))
 	return render_template("index.html")
 
 @app.route("/signup", methods = ['GET', 'POST'])
@@ -33,9 +35,8 @@ def signup():
 			person = User(first_name = new_firstname, last_name = new_lastname, email = new_email, username = new_username, password = new_password)
 			session.add(person)
 			session.commit()
-			return redirect(url_for('view_profile', user_id = person.id))
+			return redirect(url_for('edit_profile', user_id = person.id))
 		else:
-			flash('Password Do not Match, Please try to Match Them')
 			return render_template('signup.html')
 
 
@@ -47,13 +48,16 @@ def login():
 	else:
 		web_session['email'] = request.form['email']
 		person = session.query(User).filter_by(email = request.form['email']).first()
+		web_session['id'] = person.id
 		if person == None:
 			error = 'User does not exist '
 			return render_template('login.html', error = error)
 		else:
 			if person.password == request.form['password']:
-				return render_template('newsfeed.html', person = person, user_id = person.id )
+				return redirect(url_for('newsfeed', user_id = person.id)) #, user_id = person.id)
 			return render_template('login.html', error = error)
+
+
 
 
 @app.route("/profile/<int:user_id>")
@@ -117,14 +121,56 @@ def edit_profile(user_id):
 def aboutus():
 	return render_template('aboutus.html')
 
+	
+
 @app.route("/newsfeed/<int:user_id>")
 def newsfeed(user_id):
-	person = session.query(User).filter_by(id = user_id).first()
-	return render_template('newsfeed.html', person = person)
+	num = len(session.query(User).all())
+	x = "#"*100
+	var = request.args.get('next')
+	print(x)
+	print(var)
+	# print
+	new_id = user_id
+	if(var != None):
+		if(web_session['id']== user_id + int(var)):
+			user_id += int(var)
+		if(var == '-1'):
+			print("I'm going baaaaccck")
+			new_id = num if user_id == 1 else user_id-1
+		if(var == "1"):
+			print("Take me to the future!")
+			new_id = 1 if user_id == num else user_id+1
+		if(new_id == web_session['id']):
+			new_id += int(var)
+		return redirect(url_for('newsfeed', user_id=new_id))
+
+
+	#if(next !=0 and next != None):
+#	 	if(next == 1):
+#	 		new_id = 1 if user_id == num else user_id+1
+#	 	else:
+#	 		new_id = num if user_id == 1 else user_id-1
+#	 	print(url_for('newsfeed',user_id = new_id, next = 0))
+#	 	return redirect(url_for('newsfeed',user_id = new_id))
+
+	person = session.query(User).filter_by(id = new_id).first()
+	return render_template("newsfeed.html",person = person)
+
+
+
 
 @app.route("/chatroom")
 def chatroom():
 	return render_template('chatroom.html')
 
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+	return render_template('404.html')
+
+
 if __name__ == '__main__':
     app.run(host = "0.0.0.0", debug=True)
+ 

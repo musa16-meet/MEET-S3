@@ -44,9 +44,23 @@ body {
 
 }
 
+
 @font-face {
   font-family: bio;
   src: url(Aaargh.ttf);
+}
+
+#arrowleft{
+
+  font-size: 30px;
+  color: #000016;
+}
+
+#arrowright{
+  font-size: 30px;
+  color: #000016;
+
+
 }
 
 
