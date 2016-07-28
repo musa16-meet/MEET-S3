@@ -43,7 +43,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            {%block first%}<li><a href="{{url_for('home')}}">Home</a></li>{%endblock%}
+            {%block first%}<li class="active"><a href="{{url_for('home')}}">Home<span class="sr-only">(current)</span></a></li>{%endblock%}
             {%block second%}<li><a href="{{url_for('contactus')}}">Contact</a></li>{%endblock%}
             {%block third%}<li><a href="{{url_for('aboutus')}}">AboutUs</a></li>{%endblock%}
             {%block fourth%}{%endblock%}
