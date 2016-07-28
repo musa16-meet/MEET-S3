@@ -126,10 +126,7 @@ def aboutus():
 @app.route("/newsfeed/<int:user_id>")
 def newsfeed(user_id):
 	num = len(session.query(User).all())
-	x = "#"*100
 	var = request.args.get('next')
-	print(x)
-	print(var)
 	# print
 	new_id = user_id
 	if(var != None):
@@ -160,8 +157,13 @@ def newsfeed(user_id):
 
 
 
-@app.route("/chatroom/<int:user_id>")
-def chatroom(user_id):
+@app.route("/chatroom", methods = ['GET','POST'])
+def chatroom():
+	user_id = request.args.get("chatusr")
+	x = request.args.get("x")
+	y = request.args.get("y")
+	print(x)
+	print(y)
 	person = session.query(User).filter_by(id = user_id).first()
 	print(person)
 	return render_template('chatroom.html', person = person)
