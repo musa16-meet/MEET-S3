@@ -45,6 +45,7 @@ body {
 }
 
 
+
 @font-face {
   font-family: bio;
   src: url(Aaargh.ttf);
@@ -103,6 +104,11 @@ body {
 #navbar{
   color: #fff;
   font-size: 18px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #252525;
+    color: #ccc;
 }
 
 .navbar-default .navbar-nav > li > a{

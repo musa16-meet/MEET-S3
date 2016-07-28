@@ -11,7 +11,7 @@ body {
 html,
 body {
   height: 100%;
-  background-image: url('contact.jpg');
+  background-image: url('background1.jpg');
   background-repeat: no-repeat;
   background-size:100% 500%;
   max-width: 100%;
@@ -19,7 +19,14 @@ body {
 
 }
 
+
+@font-face {
+  font-family: bio;
+  src: url(Aaargh.ttf);
+}
+
 body {
+  font-family: bio;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
@@ -70,66 +77,158 @@ body {
   padding: 30px;
 }
 
+#navbar-center{
+  text-align: center;
+}
+
+
+#navbar{
+  color: #fff;
+  font-size: 18px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #252525;
+    color: #ccc;
+}
+
+.navbar-default .navbar-nav > li > a{
+
+  color: #fff;
+}
+
+
+
+.navbar-default {
+    background-color: #333;
+    border-color: #333;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #333;
+}
+
+
+/*
+ * Header
+ */
+
+#header{
+  font-size: 92px;
+}
+
+.hbio{
+  font-size: 36px;
+  border-bottom: 2px solid transparent;
+  font-weight: bold;
+  background-color: transparent;
+
+
+}
+
+.abouthe{
+  border-bottom: 2px solid transparent;
+  font-weight: bold;
+  background-color: transparent;
+  color: #333;
+}
+
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: #fff;
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255, 255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #000;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
 .cover {
   padding: 0 20px;
 }
-
 .cover .btn-lg {
   padding: 10px 20px;
   font-weight: bold;
 }
+
+
+/*
+ * Footer
+ */
 
 .mastfoot {
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
 }
 
-.navbar {
 
-   color: #fff;
-  }
-
-.navbar-brand{
-  color: #fff;
-}
-
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
+/*
+ * Affix and center
+ */
 
 @media (min-width: 768px) {
-  /* Navbar positioning foo */
-  .navbar-wrapper {
-    margin-top: 20px;
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
   }
-  .navbar-wrapper .container {
-    padding-right: 15px;
-    padding-left: 15px;
+  .mastfoot {
+    position: relative;
+    bottom: 0;
   }
-  .navbar-wrapper .navbar {
-    padding-right: 0;
-    padding-left: 0;
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
   }
-
-  /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
-    border-radius: 4px;
-  }
-
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: 1.4;
-  }
-
-  .featurette-heading {
-    font-size: 50px;
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
 }
 
 @media (min-width: 992px) {
-  .featurette-heading {
-    margin-top: 120px;
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
   }
 }
