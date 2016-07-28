@@ -51,15 +51,15 @@
     <h2>India</h2>
 
 <a href="{{url_for('newsfeed',user_id = person.id, next =-1 )}}"><span class="glyphicon glyphicon-chevron-left" id="arrowleft"></span></a>
-<img src="../static/f.jpg" alt="first profile" height="300">
+<img src="../static/f.jpg" alt="first profile" height="450">
 <a href="{{url_for('newsfeed',user_id = person.id, next =1 )}}"><span class="glyphicon glyphicon-chevron-right" id = "arrowright"></span></a>
 
 <h1>What is the name of the building in the picture:  </h1>
-<form action="newsfeed">
-  <h4><input type="radio" name="Options" value="Taj-Mahel" > Taj-Mahel</h4><br>
+<form method="POST" action="{{url_for('chatroom', chatusr = person.id)}}" required>
+  <h4><input type="radio" name="Options" value="Taj-Mahel"> Taj-Mahel</h4><br>
   <h4><input type="radio" name="Options" value="BlueMosque"> Blue Mosque</h4><br>
   <h4><input type="radio" name="Options" value="IDontKnow"> I Dont Know</h4><br><br>
-  <button type="submit" id = "bt" class="btn btn-lg btn-success" data-toggle="modal"><span class= "glyphicon glyphicon-send"></span> Submit</button>
+  <button type="submit"  id = "bt" class="btn btn-lg btn-success" data-toggle="modal"><span class= "glyphicon glyphicon-send"></span> Submit</button>
 </form>
 </div>
 <div class="col-md-3 col-sm-2 col-xs-1"></div>
