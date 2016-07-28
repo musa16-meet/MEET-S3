@@ -19,6 +19,25 @@ a:hover {
   border: 1px solid #fff;
 }
 
+#cb{
+  border: 5px;
+  border-color: grey;
+  border-style: solid;
+  /*background-color:#5C5C5C ;*/
+  background: rgba(80, 80, 80, 0.4);
+  font-style: solid;
+
+}
+
+.alle{
+  text-align: left;
+  
+
+}
+
+.alri{
+  text-align: right;
+}
 
 /*
  * Base structure
