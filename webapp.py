@@ -160,9 +160,11 @@ def newsfeed(user_id):
 
 
 
-@app.route("/chatroom")
-def chatroom():
-	return render_template('chatroom.html')
+@app.route("/chatroom/<int:user_id>")
+def chatroom(user_id):
+	person = session.query(User).filter_by(id = user_id).first()
+	print(person)
+	return render_template('chatroom.html', person = person)
 
 
 
