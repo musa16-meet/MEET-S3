@@ -60,13 +60,16 @@ def login():
 
 
 
-@app.route("/profile/<int:user_id>")
+@app.route("/profile/<int:user_id>", methods = ['POST', 'GET'])
 def view_profile(user_id):
-	person = session.query(User).filter_by(id = user_id).first()
-	return render_template('view_profile.html', person = person)
+	if request.method == 'POST':
+		person = session.query(User).filter_by(id = user_id).first()
+		return render_template('view_profile.html', person = person, user_id = person.id)
+	else:
+		return render_template('view_profile.html')
 
 
-@app.route("/delete/<int:user_id>")
+@app.route("/delete/<int:user_id>", methods = ["GET", "POST"])
 def delete():
 	person = session.query(User).filter_by(id = user_id).first()
 	if request.method == 'GET':
@@ -96,12 +99,12 @@ def contactus():
 @app.route('/edit/<int:user_id>', methods=['GET', 'POST'])
 def edit_profile(user_id):
     person = session.query(User).filter_by(id=user_id).first()
-    print([person])
+    web_session['id'] = person.id
     if request.method == 'GET':
-        return render_template('edit_profile.html', person = person)
+        return render_template('edit_profile.html', person = person, user_id = person.id)
     else:
         new_username = request.form['username']
-        new_password = request.form['password']
+        new_password = request.form['pass']
         new_conpass = request.form['conpass']
         new_email = request.form['email']
         new_firstname = request.form['first_name']

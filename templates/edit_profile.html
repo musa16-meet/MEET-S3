@@ -63,7 +63,7 @@
 
           <div class="inner cover"><br><br><br>
             <h1 class="form-signin-heading" >Here You Can Edit Your Profile:</h1><br><br>
-            <form method = 'POST' action = "{{url_for('signup')}}" class="form-signin">
+            <form method="POST" action = "{{url_for('view_profile, user_id = person.id')}}" class="form-signin">
 
           <img src="../static/p1.jpg" class="img-responsive logo_img" alt="first profile" height="300"> <br><br>
 
@@ -91,10 +91,10 @@
               <input value="{{person.email}}" type="email" id="inputEmail" class="form-control" placeholder="Email address" name = "email" required ><br>
 
               <label for="inputPassword" class="sr-only">Password: </label>
-              <input value="{{person.pass}}" type="password" id="inputPassword" class="form-control" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" name = "password" required><br>
+              <input value="{{person.pass}}" type="password" id="inputPassword" class="form-control" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" name = "pass" required><br>
 
               <label for="inputPassword" class="sr-only">Confirm Password: </label>
-              <input value="{{person.conpass}}" type="password" id="inputPassword" class="form-control" placeholder="Re-Write your Password" name = "confirm_password" required><br>
+              <input value="{{person.conpass}}" type="password" id="inputPassword" class="form-control" placeholder="Re-Write your Password" name = "conpass" required><br>
 
               <button class="btn btn-lg btn-primary btn-block" type="submit">Update Your Profile</button>
             </form>

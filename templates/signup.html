@@ -2,6 +2,7 @@
    
 {%block headcont%}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signin.css') }}">{%endblock%}
 {%block pagecont%}
+{%block first%}<li><a href="{{url_for('home')}}">Home</a></li>{%endblock%}
     <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
@@ -27,7 +28,7 @@
               <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name = "email" required ><br>
 
               <label for="inputPassword" class="sr-only">Password: </label>
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" name = "password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" name = "password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain : 1- at least one number 2- one uppercase 3- lowercase letter 4- at least 8 or more characters" required><br>
 
               <label for="inputPassword" class="sr-only">Confirm Password: </label>
               <input type="password" id="inputPassword" class="form-control" 

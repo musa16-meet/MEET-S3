@@ -1,4 +1,15 @@
 body {
+  height: 100%;
+  background-image: url('bg56.jpg');
+  max-width: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size:cover;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  -o-background-size:cover;
+  /*overflow-x: hidden;*/
+  overflow-y: scroll;
 }
 
 .site-wrapper {
@@ -8,6 +19,7 @@ body {
   min-height: 100%;
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+
 }
 .site-wrapper-inner {
   display: table-cell;
