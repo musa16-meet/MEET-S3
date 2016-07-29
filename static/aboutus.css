@@ -15,7 +15,12 @@ body {
   	overflow-y: scroll;
     font-size: 19px;
 }
-  
+
+h3{
+  font-size: 35px;
+  font-weight: bold;
+}
+
  p {font-size: 22px;}
  .margin {margin-bottom: 45px;}
 
@@ -201,3 +206,4 @@ body {
 #section2 {padding-top:70px;padding-bottom:100px;color: #ffffff; background-color: #5a87b9;}
 #section3 {padding-top:70px;padding-bottom:100px;color: #ffffff; background-color: #bfbfbf;}
 #section4 {padding-top:50px;padding-bottom:30px;color: #ffffff; background-color: #2f2f2f;}
+
