@@ -63,20 +63,9 @@
 
           <div class="inner cover"><br><br><br>
             <h1 class="form-signin-heading" >Here You Can Edit Your Profile:</h1><br><br>
-            <form method="POST" action = "{{url_for('view_profile, user_id = person.id')}}" class="form-signin">
+            <form method="POST" action = "{{url_for('newsfeed', user_id = person.id)}}" class="form-signin">
 
           <img src="../static/p1.jpg" class="img-responsive logo_img" alt="first profile" height="300"> <br><br>
-
-			<!-- <table style="width:100%" align = "center">
-  				<tr>
-    				<td>picture</td>
-    				<td>picture</td>
-    			</tr>
-    			<tr>
-    				<td>picture</td>
-    				<td>Picture</td>
-  				</tr>
-  			</table> -->
 
               <label for="inputFirstName" class="sr-only">First Name: </label>
               <input value="{{person.first_name}}" type="text" id="inputFirstName" class="form-control" placeholder="First Name" name = "first_name" required autofocus><br>
