@@ -98,17 +98,25 @@ def contactus():
 
 @app.route('/edit/<int:user_id>', methods=['GET', 'POST'])
 def edit_profile(user_id):
+    print("EDIT ")
     person = session.query(User).filter_by(id=user_id).first()
     web_session['id'] = person.id
     if request.method == 'GET':
         return render_template('edit_profile.html', person = person)
     else:
+        print("POSTING edit")
         new_username = request.form['username']
         new_password = request.form['pass']
         new_conpass = request.form['conpass']
         new_email = request.form['email']
         new_firstname = request.form['first_name']
         new_lastname = request.form['last_name']
+        new_picture = request.form['picture']
+        new_location = request.form['location']
+        new_question = request.form['question']
+        new_A1 = request.form['A1']
+        new_A2 = request.form['A2']
+        new_A3 = request.form['A3']
 
 
 
@@ -117,6 +125,12 @@ def edit_profile(user_id):
         person.email = new_email
         person.first_name = new_firstname
         person.last_name = new_lastname
+        person.picture = new_picture
+        person.location = new_location
+        person.question = new_question
+        person.A1 = new_A1
+        person.A2 = new_A2
+        person.A3 = new_A3
 
         session.commit()
 

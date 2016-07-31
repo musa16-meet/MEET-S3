@@ -25,113 +25,16 @@ body {
   display: table-cell;
   vertical-align: top;
 }
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 30px;
-}
-
-#navbar-center{
-  text-align: center;
-}
-
-
-#navbar{
-  color: #fff;
-  font-size: 18px;
-}
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #252525;
-    color: #ccc;
-}
-
-.navbar-default .navbar-nav > li > a{
-
-  color: #fff;
-}
 
 
 
-.navbar-default {
-    background-color: #333;
-    border-color: #333;
-}
-/* title */
-.navbar-default .navbar-brand {
-    color: #333;
-}
 
-
-/*
- * Header
- */
-
-#header{
-  font-size: 92px;
-}
-
-.hbio{
-  font-size: 36px;
-  border-bottom: 2px solid transparent;
-  font-weight: bold;
-  background-color: transparent;
-
-
-}
-
-.abouthe{
-  border-bottom: 2px solid transparent;
-  font-weight: bold;
-  background-color: transparent;
-  color: #333;
-}
-
-.masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.masthead-nav > li {
-  display: inline-block;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: #fff;
-  border-bottom: 2px solid transparent;
-}
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255, 255,.25);
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #000;
-  border-bottom-color: #fff;
-}
 
 @media (min-width: 768px) {
   .masthead-brand {
     float: left;
   }
-  .masthead-nav {
-    float: right;
-  }
-}
+
 
 
 /*
@@ -215,24 +118,13 @@ body {
   font-weight: normal;
 }
 .form-signin .form-control {
-  position: relative;
   height: auto;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   padding: 10px;
   font-size: 16px;
 }
 .form-signin .form-control:focus {
   z-index: 2;
-}
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }

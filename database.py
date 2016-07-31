@@ -23,8 +23,9 @@ class User (Base):
 	password = Column(String(60))
 	email = Column(String(140))
 	location = Column(String(60))
-
-class Picture(Base):
-	__tablename__='picture'
-	id = Column(Integer, primary_key=True)
 	picture = Column(String(150))
+	question = Column(String(150))
+	A1 = Column(String(100))
+	A2 = Column(String(100))
+	A3 = Column(String(100))
+
