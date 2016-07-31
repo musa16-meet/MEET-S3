@@ -31,13 +31,16 @@ def signup():
 		new_username = request.form['username']
 		new_password = request.form['password']
 		confirm_password = request.form['confirm_password']
+		picture = ""
+
 		if confirm_password == new_password:
-			person = User(first_name = new_firstname, last_name = new_lastname, email = new_email, username = new_username, password = new_password)
+			person = User(first_name = new_firstname, picture = picture, last_name = new_lastname, email = new_email, username = new_username, password = new_password)
 			session.add(person)
 			session.commit()
 			return redirect(url_for('newsfeed', user_id = person.id))
 		else:
 			return render_template('signup.html')
+
 
 
 @app.route("/login", methods = ['GET', 'POST'])
