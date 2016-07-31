@@ -33,7 +33,7 @@
             <li class="active"><a href="{{url_for('home')}}">Chat box</a></li>
             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../static/settings.png" height="20"> <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="{{url_for('edit_profile')}}">edit profile</a></li>
+                <li><a href="{{url_for('edit_profile', user_id = person.id)}}">edit profile</a></li>
                 <li><a href="{{url_for('home')}}">Log out</a></li></li>
                 </ul>
 
@@ -45,7 +45,7 @@
 
   <div class=" row ">
     <div class="col-md-1 col-sm-1 col-xs-1"></div>
-    <div id = "cb" class="col-md-7 col-sm-6 col-xs-6"><h1>Hey,{{person.first_name}} :</h1>
+    <div id = "cb" class="col-md-7 col-sm-6 col-xs-6"><h1>{{person.first_name}}:</h1>
       <div class="row">
         <div class="col-md-5 alri">
           <h2 class="alle">Hiii !</h2><br>

@@ -35,7 +35,7 @@ def signup():
 			person = User(first_name = new_firstname, last_name = new_lastname, email = new_email, username = new_username, password = new_password)
 			session.add(person)
 			session.commit()
-			return redirect(url_for('edit_profile', user_id = person.id))
+			return redirect(url_for('newsfeed', user_id = person.id))
 		else:
 			return render_template('signup.html')
 
@@ -101,7 +101,7 @@ def edit_profile(user_id):
     person = session.query(User).filter_by(id=user_id).first()
     web_session['id'] = person.id
     if request.method == 'GET':
-        return render_template('edit_profile.html', person = person, user_id = person.id)
+        return render_template('edit_profile.html', person = person)
     else:
         new_username = request.form['username']
         new_password = request.form['pass']
@@ -111,13 +111,16 @@ def edit_profile(user_id):
         new_lastname = request.form['last_name']
 
 
+
         person.username = new_username
         person.password = new_password
         person.email = new_email
+        person.first_name = new_firstname
+        person.last_name = new_lastname
 
         session.commit()
 
-        return redirect(url_for('view_profile', user_id = person.id))
+        return redirect(url_for('newsfeed', user_id = person.id))
 
 
 @app.route("/aboutus")
@@ -126,33 +129,21 @@ def aboutus():
 
 	
 
-@app.route("/newsfeed/<int:user_id>")
+@app.route("/newsfeed/<int:user_id>", methods = ['GET', 'POST'])
 def newsfeed(user_id):
 	num = len(session.query(User).all())
 	var = request.args.get('next')
-	# print
 	new_id = user_id
 	if(var != None):
 		if(web_session['id']== user_id + int(var)):
 			user_id += int(var)
 		if(var == '-1'):
-			print("I'm going baaaaccck")
 			new_id = num if user_id == 1 else user_id-1
 		if(var == "1"):
-			print("Take me to the future!")
 			new_id = 1 if user_id == num else user_id+1
 		if(new_id == web_session['id']):
 			new_id += int(var)
 		return redirect(url_for('newsfeed', user_id=new_id))
-
-
-	#if(next !=0 and next != None):
-#	 	if(next == 1):
-#	 		new_id = 1 if user_id == num else user_id+1
-#	 	else:
-#	 		new_id = num if user_id == 1 else user_id-1
-#	 	print(url_for('newsfeed',user_id = new_id, next = 0))
-#	 	return redirect(url_for('newsfeed',user_id = new_id))
 
 	person = session.query(User).filter_by(id = new_id).first()
 	return render_template("newsfeed.html",person = person)
