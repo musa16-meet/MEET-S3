@@ -51,11 +51,11 @@ def login():
 	else:
 		web_session['email'] = request.form['email']
 		person = session.query(User).filter_by(email = request.form['email']).first()
-		web_session['id'] = person.id
 		if person == None:
 			error = 'User does not exist '
 			return render_template('login.html', error = error)
 		else:
+			web_session['id'] = person.id
 			if person.password == request.form['password']:
 				return redirect(url_for('newsfeed', user_id = person.id)) #, user_id = person.id)
 			return render_template('login.html', error = error)
@@ -85,19 +85,17 @@ def delete():
 @app.route("/contact", methods = ['POST','GET'])
 def contactus():
 
-	if request.method == 'GET':
-		return render_template('contactus.html')
+    if request.method == 'GET':
+        return render_template('contactus.html')
 
-	else:
-		user_name = request.form['name']
-    	user_email = request.form['email']
-    	user_message = request.form['message']
-    	msg = Contact(name = user_name, email = user_email, messege= user_message)
-    	session.add(msg)
-    	session.commit()
-    	return render_template('sent.html')
-
-
+    else:
+        user_name = request.form['name']
+        user_email = request.form['email']
+        user_message = request.form['message']
+        msg = Contact(name = user_name, email = user_email, messege= user_message)
+        session.add(msg)
+        session.commit()
+        return render_template('sent.html')
 
 @app.route('/edit/<int:user_id>', methods=['GET', 'POST'])
 def edit_profile(user_id):
