@@ -32,7 +32,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="{{url_for('newsfeed',user_id = person.id, next = 0)}}">NewsFeed <span class="sr-only">(current)</span></a></li>
-            <li><a href="{{url_for('chatroom')}}">Chat box</a></li>
+            <li><a href="{{url_for('chatroom', chatusr = person.id)}}">Chat box</a></li>
             <li><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../static/settings.png" height="20"> <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="{{url_for('edit_profile',user_id = person.id)}}">Edit Profile</a></li>
@@ -46,19 +46,21 @@
 <!-- <div class="row"> -->
 <div class="col-md-3 col-sm-2 col-xs-1"></div>
 <div class="col-md-6 col-sm-8 col-xs-10">
-    <h1>{{person.first_name}}</h1>  
-    <h2>India</h2>
 
-<a href="{{url_for('newsfeed',user_id = person.id, next =-1 )}}"><span class="glyphicon glyphicon-chevron-left" id="arrowleft" style="color:white"></span></a>
-<img src="../static/f.jpg" alt="first profile" height="450">
-<a href="{{url_for('newsfeed',user_id = person.id, next =1 )}}"><span class="glyphicon glyphicon-chevron-right" id = "arrowright" style="color:white"></span></a>
+    <h1>{{person.first_name}}  </h1>  
+    <h2>{{person.location}}</h2>
 
-<h1>What is the name of the building in the picture:  </h1>
+<a  style="color:white" href="{{url_for('newsfeed',user_id = person.id, next =-1 )}}"><span class="glyphicon glyphicon-chevron-left" id="arrowleft"></span></a>
+<img src="{{url_for('static' ,filename = person.picture)}}" alt="first profile" height="410" width="440" />
+<a  style="color:white" href="{{url_for('newsfeed',user_id = person.id, next =1 )}}"><span class="glyphicon glyphicon-chevron-right" id = "arrowright"></span></a>
+
+
+<h1>{{person.question}}:  </h1>
 <form method="POST" action="{{url_for('chatroom', chatusr = person.id)}}" required>
-  <h4><input type="radio" name="Options" value="Taj-Mahel"> Taj-Mahel</h4><br>
-  <h4><input type="radio" name="Options" value="BlueMosque"> Blue Mosque</h4><br>
-  <h4><input type="radio" name="Options" value="IDontKnow"> I Dont Know</h4><br><br>
-  <button type="submit"  id = "bt" class="btn btn-lg btn-success" data-toggle="modal"><span class= "glyphicon glyphicon-send"></span> Submit</button>
+  <h4><input type="radio" name="Options" value="Taj-Mahel"> {{person.A1}}</h4><br>
+  <h4><input type="radio" name="Options" value="BlueMosque"> {{person.A2}}</h4><br>
+  <h4><input type="radio" name="Options" value="IDontKnow"> {{person.A3}}</h4><br><br>
+  <button type="submit"  id = "bt" class="btn btn-lg btn-success" data-toggle="modal"><span class= "glyphicon glyphicon-send"></span> Submit</button><br><br>
 </form>
 </div>
 <div class="col-md-3 col-sm-2 col-xs-1"> </div>
