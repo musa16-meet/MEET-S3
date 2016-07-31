@@ -11,7 +11,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="../bootstrap-3.3.6/docs/assets/js/ie-emulation-modes-warning.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="icon" href="http://conciergeandstyle.com/fetes/e=-716.png">
+    <link rel="icon" href="{{ url_for('static', filename='lo.png') }}" >
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='newsfeed.css') }}">
     <title>Explore</title>
   </head>
@@ -46,12 +46,12 @@
 <!-- <div class="row"> -->
 <div class="col-md-3 col-sm-2 col-xs-1"></div>
 <div class="col-md-6 col-sm-8 col-xs-10">
-    <h1>{{person.first_name}}  </h1>  
+    <h1>{{person.first_name}}</h1>  
     <h2>India</h2>
 
-<a href="{{url_for('newsfeed',user_id = person.id, next =-1 )}}"><span class="glyphicon glyphicon-chevron-left" id="arrowleft"></span></a>
+<a href="{{url_for('newsfeed',user_id = person.id, next =-1 )}}"><span class="glyphicon glyphicon-chevron-left" id="arrowleft" style="color:white"></span></a>
 <img src="../static/f.jpg" alt="first profile" height="450">
-<a href="{{url_for('newsfeed',user_id = person.id, next =1 )}}"><span class="glyphicon glyphicon-chevron-right" id = "arrowright"></span></a>
+<a href="{{url_for('newsfeed',user_id = person.id, next =1 )}}"><span class="glyphicon glyphicon-chevron-right" id = "arrowright" style="color:white"></span></a>
 
 <h1>What is the name of the building in the picture:  </h1>
 <form method="POST" action="{{url_for('chatroom', chatusr = person.id)}}" required>
@@ -61,7 +61,7 @@
   <button type="submit"  id = "bt" class="btn btn-lg btn-success" data-toggle="modal"><span class= "glyphicon glyphicon-send"></span> Submit</button>
 </form>
 </div>
-<div class="col-md-3 col-sm-2 col-xs-1"></div>
+<div class="col-md-3 col-sm-2 col-xs-1"> </div>
 <br>
 <br>
 <!-- </div> -->

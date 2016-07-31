@@ -19,6 +19,11 @@ a:hover {
   border: 1px solid #fff;
 }
 
+h1{
+  font-weight: bold;
+}
+
+
 #cb{
   border: 5px;
   border-color: grey;
