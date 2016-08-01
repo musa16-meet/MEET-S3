@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="../bootstrap-3.3.6/docs/assets/js/ie-emulation-modes-warning.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='lo.png') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='newsfeed.css') }}">
+    <title>Explore</title>
+  </head>
+<body data-spy="scroll" data-target=".navbar" data-offset="70">
+
+
+ <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{url_for('home')}}"><img src="../static/logo.png" alt="Explore logo" height="24"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="{{url_for('newsfeed',user_id = person.id, next = 0)}}">NewsFeed <span class="sr-only">(current)</span></a></li>
+            <li><a href="{{url_for('chatroom', chatusr = person.id)}}">Chat box</a></li>
+            <li><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../static/settings.png" height="20"> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{url_for('edit_profile',user_id = person.id)}}">Edit Profile</a></li>
+                <li><a href="{{url_for('home')}}">Log out</a></li></li>
+                </ul>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav><br><br><br><br>
+<!-- <div class="row"> -->
+
+
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="inner cover"><br><br><br><br>
+            
+            <p class="lead">
+              <a class = "btn btn-lg btn-success" href="{{url_for('answer', chatusr = person.id)}}"><span class = "glyphicon glyphicon-log-in" ></span> Chat with the person </a>
+              <a class ="btn btn-lg btn-primary" href="{{url_for('newsfeed',user_id = person.id, next = 0)}"><span class = "glyphicon glyphicon-user" ></span>Keep exploring</a>
+              </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>All rights reserved®, by <a href="https://twitter.com/_MusaHawa">@Explore</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

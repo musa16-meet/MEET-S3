@@ -15,8 +15,7 @@ session = DBSession()
 
 @app.route("/")
 def home():
-	# if(request.user.is_authenticated()):
-	# 	return redirect(url_for('newsfeed', user_id = request.user.id))
+
 	return render_template("index.html")
 
 @app.route("/signup", methods = ['GET', 'POST'])
@@ -32,6 +31,10 @@ def signup():
 		new_password = request.form['password']
 		confirm_password = request.form['confirm_password']
 		picture = ""
+		question = ""
+		A1 = ""
+		A2 = ""
+		A3 = ""
 
 		if confirm_password == new_password:
 			person = User(first_name = new_firstname, picture = picture, last_name = new_lastname, email = new_email, username = new_username, password = new_password)
